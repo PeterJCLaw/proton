@@ -1,4 +1,4 @@
-#Proton (1.0.2 [SemVer](http://semver.org/))
+#Proton (2.0.0-rc1 [SemVer](http://semver.org/))
 
 Proton is a protocol for Student Robotics match scoring scripts.
 
@@ -44,6 +44,9 @@ Note: A TLA is defined as a string matching the regex `[a-zA-Z]{3}[a-zA-Z0-9]*`.
 
             any other key value pairs representing data about scoring specific
             to the year and game.
+    other: optional key containing any other content desired to be recorded
+           about the results of the match. A typical use-case might be for
+           storing non-teams related data for further validation.
     ~~~
 
     1.2 A proton compliant program MUST exit with 1 if the input is malformed
@@ -100,6 +103,7 @@ teams:
      squares : [[0,0,0],[3,0,0],[0,0,0]]
     QEH1:
      squares : [[0,0,0],[6,0,0],[0,0,0]]
+other: 42
 ```
 
 ```yaml
