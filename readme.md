@@ -1,4 +1,4 @@
-#Proton (2.0.0-rc1 [SemVer](http://semver.org/))
+#Proton (2.0.0 [SemVer](http://semver.org/))
 
 Proton is a protocol for Student Robotics match scoring scripts.
 
