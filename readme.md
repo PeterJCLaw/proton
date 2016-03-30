@@ -1,4 +1,4 @@
-#Proton (2.0.0 [SemVer](http://semver.org/))
+#Proton (3.0.0-rc1 [SemVer](http://semver.org/))
 
 Proton is a protocol for Student Robotics match scoring scripts.
 
@@ -19,9 +19,12 @@ Proton is a protocol for Student Robotics match scoring scripts.
 5. A proton compliant program MUST always give the same output for a given
    input.
 
-##Inputs
+##Definitions
 
-Note: A TLA is defined as a string matching the regex `[a-zA-Z]{3}[a-zA-Z0-9]*`.
+1. A TLA is defined as a string matching the regex `[a-zA-Z]{3}[a-zA-Z0-9]*`.
+2. A ZONE is defined as an integer between 0 and 3 inclusive.
+
+##Inputs
 
 1. A proton compliant program MUST consume a single argument which is the
    path to a YAML file containing a computerised interpretation of a Student
@@ -38,12 +41,24 @@ Note: A TLA is defined as a string matching the regex `[a-zA-Z]{3}[a-zA-Z0-9]*`.
     arena_id: integer or string representing arena identity
     teams: dictionary with 2-4 key value pairs:
         TLA: dictionary with key value pairs:
-            zone: an integer between 0 and 3 inclusive
+            zone: a ZONE
             disqualified: an optional boolean, defaulting to false
             present: an optional boolean, defaulting to true
 
-            any other key value pairs representing data about scoring specific
-            to the year and game.
+            optionally other key value pairs representing data about
+            scoring specific to the year and game which are most suitably
+            stored against a team.
+
+    arena: optional dictionary with key value pairs:
+        ZONE: optional dictionary
+            any key value pairs representing data about scoring specific
+            to the year and game which are most suitably stored against
+            an arena zone.
+        other: optional dictionary
+            any key value pairs representing data about scoring specific
+            to the year and game which are most suitably stored against
+            the arena but not a zone.
+
     other: optional key containing any other content desired to be recorded
            about the results of the match. A typical use-case might be for
            storing non-teams related data for further validation.
