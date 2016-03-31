@@ -1,4 +1,4 @@
-#Proton (3.0.0-rc1 [SemVer](http://semver.org/))
+#Proton (3.0.0-rc2 [SemVer](http://semver.org/))
 
 Proton is a protocol for Student Robotics match scoring scripts.
 
@@ -49,7 +49,7 @@ Proton is a protocol for Student Robotics match scoring scripts.
             scoring specific to the year and game which are most suitably
             stored against a team.
 
-    arena: optional dictionary with key value pairs:
+    arena_zones: optional dictionary with key value pairs:
         ZONE: optional dictionary
             any key value pairs representing data about scoring specific
             to the year and game which are most suitably stored against
@@ -57,7 +57,7 @@ Proton is a protocol for Student Robotics match scoring scripts.
         other: optional dictionary
             any key value pairs representing data about scoring specific
             to the year and game which are most suitably stored against
-            the arena but not a zone.
+            the arena but not a team's zone.
 
     other: optional key containing any other content desired to be recorded
            about the results of the match. A typical use-case might be for
