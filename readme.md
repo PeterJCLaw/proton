@@ -1,8 +1,8 @@
-#Proton (3.0.0-rc2 [SemVer](http://semver.org/))
+# Proton (3.0.0-rc2 [SemVer](http://semver.org/))
 
 Proton is a protocol for Student Robotics match scoring scripts.
 
-##Execution
+## Execution
 
 1. A proton compliant program MUST be either a script including a `#!` line
    or be a binary.
@@ -19,12 +19,12 @@ Proton is a protocol for Student Robotics match scoring scripts.
 5. A proton compliant program MUST always give the same output for a given
    input.
 
-##Definitions
+## Definitions
 
 1. A TLA is defined as a string matching the regex `[a-zA-Z]{3}[a-zA-Z0-9]*`.
 2. A ZONE is defined as an integer between 0 and 3 inclusive.
 
-##Inputs
+## Inputs
 
 1. A proton compliant program MUST consume a single argument which is the
    path to a YAML file containing a computerised interpretation of a Student
@@ -74,7 +74,7 @@ Proton is a protocol for Student Robotics match scoring scripts.
    nested scoring values it is unable to process. If this occurs it MUST
    exit with 2.
 
-##Outputs
+## Outputs
 
 1. A proton compliant program MUST print a YAML dictionary to STDOUT if it
    succeeds.
@@ -102,9 +102,9 @@ Proton is a protocol for Student Robotics match scoring scripts.
 4. A proton compliant program MAY print to STDERR under any circumstances.
 
 
-##Examples
+## Examples
 
-###Valid inputs
+### Valid inputs
 
 ```yaml
 match_number: 3
@@ -134,7 +134,7 @@ teams:
      squares : [[0,0,0],[6,0,0],[0,0,0]]
 ```
 
-###Invalid inputs
+### Invalid inputs
 
 ```yaml
 match_number: 3
@@ -166,7 +166,7 @@ teams:
      squares : [[0,0,0],[6,0,0],[0,0,0]]
 ```
 
-###Valid responses
+### Valid responses
 
 ```
 version: 1.0.0
@@ -194,18 +194,18 @@ scores:
         disqualified: false
         zone: 3
 
-#with exit code 0
+# with exit code 0
 ```
 
 ```
-#with exit code 1
+# with exit code 1
 ```
 
 ```
-#with exit code 2
+# with exit code 2
 ```
 
-###Invalid responses
+### Invalid responses
 
 No match number
 ```
@@ -227,14 +227,14 @@ scores:
         score: 7.0
         present: true
         disqualified: false
-#with exit code 0
+# with exit code 0
 ```
 
 Many missing values
 ```
 version: 1.0.0
 scores:
-#with exit code 0
+# with exit code 0
 ```
 
 Missing match number and arena ID
@@ -257,5 +257,5 @@ scores:
         score: 18.0
         present: true
         disqualified: false
-#with exit code 1
+# with exit code 1
 ```
