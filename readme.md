@@ -36,7 +36,7 @@ Proton is a protocol for Student Robotics match scoring scripts.
     1.1 A proton compliant program MUST accept YAML files with the proton
         format, these are of the form:
 
-    ~~~
+    ~~~yaml
     match_number: integer
     arena_id: integer or string representing arena identity
     teams: dictionary with 2-4 key value pairs:
@@ -168,7 +168,7 @@ teams:
 
 ### Valid responses
 
-```
+``` yaml
 version: 1.0.0
 match_number: 3
 arena_id: A
@@ -208,7 +208,7 @@ scores:
 ### Invalid responses
 
 No match number
-```
+``` yaml
 version: 1.0.0
 scores:
     CLF:
@@ -231,14 +231,14 @@ scores:
 ```
 
 Many missing values
-```
+``` yaml
 version: 1.0.0
 scores:
 # with exit code 0
 ```
 
 Missing match number and arena ID
-```
+``` yaml
 version: 1.0.0
 scores:
     CLF:
